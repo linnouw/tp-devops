@@ -1,24 +1,17 @@
-name: Hello world app
+
+name: "Hello world app"
     
-    on: [push]
-    
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - name: checkout repo content
-            uses: actions/checkout@v2 # checkout the repository content to github runner.
-          - name: setup python
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.8 #install the python needed
-          -name: install depenencies
-            run: pip3 install -r requirements.txt
+on: [push]
 
-
-      test:
-        runs-on: python3 -m test.py
-
-
-      deploy:
-        runs-on: python3 -m app.py
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: install depenencies
+        run: pip3 install -r requirements.txt

@@ -22,7 +22,6 @@ def send_request_with_custom_body(body: dict):
 
     return response.json()
 
-
 if __name__ == "__main__":
 
     print(f"Hello. My ip is {get_my_public_ip()}")
