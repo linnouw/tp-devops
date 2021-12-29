@@ -18,4 +18,4 @@ jobs:
       - name: run tests
         run: python3 -m pytest test.py
       - name: deploy
-        run: python3 -m app.py
+        run: python3 app.py
